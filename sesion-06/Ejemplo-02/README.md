@@ -155,9 +155,3 @@ También verás:
 Puedes agregar más slides, tarjetas, videos o incluso formularios dentro del carrusel. Cada `carousel-item` puede contener cualquier estructura HTML, no solo imágenes.
 
 ---
-
-## ⏭️ ¿Qué sigue?
-
-Vamos a agregar una **tarjeta personalizada** dentro del carrusel para combinar imágenes con contenido enriquecido.
-
-➡️ [Siguiente reto: Agregar el carrusel y la primer tarjeta](../reto-02/README.md)

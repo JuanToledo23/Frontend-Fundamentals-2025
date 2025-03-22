@@ -120,5 +120,3 @@ Además, los íconos deben cargarse correctamente desde la carpeta `/icons`.
 ### ⏭️ ¿Qué sigue?
 
 En el siguiente ejercicio aprenderás a crear una **nueva página dentro del proyecto** que reutilice componentes como navbar, cards y botones, para mostrar un destino turístico específico. Esto te permitirá organizar tu sitio en múltiples secciones interconectadas y consistentes visualmente.
-
-[Ir al siguiente ejercicio →](../Ejemplo-05/README.md)

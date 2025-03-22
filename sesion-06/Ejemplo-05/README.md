@@ -184,9 +184,3 @@ Para que el contenido se visualice correctamente, puedes usar estos estilos CSS:
 Una sección de preguntas frecuentes dividida en dos columnas, donde al menos una columna contiene un acordeón funcional de Bootstrap que permite visualizar diferentes respuestas al hacer clic en cada pregunta.
 
 ---
-
-## Transición al siguiente ejercicio
-
-En el siguiente ejercicio vamos a trabajar un **reto** para reforzar el uso de componentes reutilizables.
-
-[Siguiente →](../reto-05/README.md)

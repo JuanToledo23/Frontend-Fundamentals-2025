@@ -1,26 +1,37 @@
 # Reto 01 - Fijando la barra de navegación a la parte superior de la pantalla
 
+## Introducción
+
+En este reto trabajaremos con uno de los elementos más importantes de cualquier sitio web: la barra de navegación. Vamos a asegurarnos de que esta se mantenga visible en la parte superior de la pantalla incluso cuando el usuario haga scroll. Esto es una práctica común en diseño web moderno y mejora considerablemente la experiencia de navegación.
+
+---
+
 ## Objetivos
-1. Agregar posicionamiento estático a la barra de navegación.
+
+- Aplicar posicionamiento fijo a la barra de navegación.
+- Utilizar clases utilitarias de Bootstrap para lograr este efecto.
+- Ajustar los estilos para que el contenido visual se mantenga limpio y legible.
+
+---
+
 ## Requisitos
-- Tener instalado Visual Studio Code
-- Saber que es responsive design
 
-## Instrucciones
+- Tener Visual Studio Code instalado (u otro editor de código).
+- Haber creado previamente tu archivo `index.html` con la barra de navegación.
+- Tener cargado Bootstrap en tu proyecto.
+- Comprender el concepto de diseño responsive.
 
-Recuerdas que la barra de navegación tenía un posicionamiento fijo en la parte superior aún y cuando estemos haciendo scroll. ¿Has notado que este comportamiento ya no está presente? ¿Puedes solucionarlo?
+---
 
-:::tip
+## Desarrollo paso a paso
 
-Al ser este un caso común, Bootstrap tiene clases utilitarias que pueden ayudar
-a lograr este comportamiento. Revisa [esta sección de navbar de la documentación](https://getbootstrap.com/docs/5.1/components/navbar/#placement) para que te des una idea de qué podrías usar.
+### Paso 1: Analizar el comportamiento actual
 
-:::
+Abre tu archivo `index.html` y visualiza la página en el navegador. Observa que al hacer scroll, la barra de navegación desaparece. El objetivo es fijarla en la parte superior de la pantalla.
 
-<details>
-  <summary>Posible solución</summary>
+### Paso 2: Agregar la clase `fixed-top`
 
-La clase `fixed-top` de Bootstrap nos ayuda a solucionar este problema:
+Bootstrap ofrece una clase utilitaria llamada `fixed-top` que hace exactamente lo que necesitamos. Agrégala directamente en el elemento `<nav>` de tu barra de navegación:
 
 ```html
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -28,10 +39,11 @@ La clase `fixed-top` de Bootstrap nos ayuda a solucionar este problema:
 </nav>
 ```
 
-Si bien nuestra barra se posiciona como queremos, al momento de hacer scroll nos
-damos cuenta que no tiene un color de fondo porque el texto se mezcla con el
-resto del contenido de la página. Para esto, podemos agregarle un color de fondo
-a la clase `.navbar` que tenemos declarada en nuestros estilos:
+Guarda los cambios y actualiza tu navegador. Verás que la barra ahora se queda fija mientras haces scroll.
+
+### Paso 3: Asegurar visibilidad con fondo
+
+Es posible que al hacer scroll, el contenido pase por detrás de la barra de navegación, dificultando la lectura. Para evitarlo, asegurémonos de que la barra tenga un color de fondo definido. Esto se puede hacer desde tu archivo CSS, agregando el siguiente bloque:
 
 ```css
 .navbar {
@@ -41,9 +53,14 @@ a la clase `.navbar` que tenemos declarada en nuestros estilos:
   font-weight: 500;
 }
 ```
-</details>
 
+Esto garantiza que el texto sea visible y que la barra tenga contraste con el resto del contenido.
 
-<br/>
+---
 
-[Siguiente](../Ejemplo-02/README.md)
+## Resultado esperado
+
+Una barra de navegación que permanece fija en la parte superior al hacer scroll, con estilos claros y legibles. La experiencia de usuario mejora porque los visitantes siempre tienen acceso al menú de navegación.
+
+---
+
