@@ -1,86 +1,55 @@
-# Ej. 01 - Agregando javascript al proyecto
+# 🧪 Ejemplo 01 – Agregando JavaScript de Bootstrap al Proyecto
 
-## Introducción
+## 🧠 Introducción
 
-El framework de Bootstrap también utiliza un lenguaje de programación para lograr que algunos de sus elementos puedan funcionar correctamente. Este paso dentro de tu proyecto es importante para que la funcionalidad que necesitas se encuentre presente siempre.
-## Objetivos
-1. Insertar los scripts de Javascript que utiliza Bootstrap.
+¡Bienvenido al primer ejemplo de la sesión!  
+Antes de empezar a usar componentes modernos como **carruseles**, **menús colapsables** o **acordeones**, necesitamos asegurarnos de que **Bootstrap 5** esté bien integrado en nuestro proyecto.
 
-## Requisitos
+Recuerda que Bootstrap funciona con dos piezas clave:
 
-1. Tener instalado Visual Studio Code.
+1. **CSS**: Para los estilos, el diseño, las clases visuales como botones, márgenes, contenedores, etc.
+2. **JavaScript (JS)**: Para que los componentes interactivos funcionen correctamente (por ejemplo, el botón de menú hamburguesa en móvil, los sliders, etc.).
 
-## Desarrollo
+En este ejemplo, vas a integrar ambas cosas desde un CDN (Content Delivery Network), lo que significa que no necesitas descargar archivos, solo enlazarlos.
 
-## Cómo agregar iconos
+Vamos a usar todo esto dentro de tu página **"Descubre México"**, así que asegúrate de tener abierto tu archivo `index.html`.
 
-Para insertar un ícono, agregue el nombre de la clase de ícono a cualquier elemento HTML en línea.
+---
 
-Los elementos `<i>` y `<span>` se utilizan ampliamente para agregar iconos.
+## 🎯 Objetivos
 
-Todos los íconos en las bibliotecas de íconos a continuación son íconos vectoriales escalables que se pueden personalizar con CSS (tamaño, color, sombra, etc.)
+Al terminar este ejercicio podrás:
 
-Algunas alternativas para usar iconos son:
+- Conectar correctamente Bootstrap 5 a tu proyecto web.
+- Habilitar los estilos prediseñados de Bootstrap.
+- Activar los componentes interactivos que requieren JavaScript.
+- Dejar tu página lista para usar componentes modernos y reutilizables.
 
-- Font Awesome
+---
 
-```html 
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
+## ✅ Requisitos
 
-    <i class="fas fa-band-aid"></i>
-    <i class="fas fa-cat"></i>
-    <i class="fas fa-dragon"></i>
-    <i class="far fa-clock"></i>
-    <i class="fas fa-clock"></i>
+Asegúrate de tener lo siguiente antes de comenzar:
 
-  </body>
-</html>
+- Visual Studio Code instalado.
+- Tu proyecto “Descubre México” con el archivo `index.html` ya creado.
+- Conexión a internet (ya que usaremos los archivos desde la nube, vía CDN).
 
-```
+---
 
-- Bootstrap 3
+## 🛠 Desarrollo paso a paso
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  </head>
-  <body>
+### 🔹 Paso 1: Agrega el archivo CSS de Bootstrap
 
-    <i class="glyphicon glyphicon-cloud"></i>
-    <i class="glyphicon glyphicon-remove"></i>
-    <i class="glyphicon glyphicon-user"></i>
-    <i class="glyphicon glyphicon-envelope"></i>
-    <i class="glyphicon glyphicon-thumbs-up"></i>
+Bootstrap tiene un archivo CSS que contiene todas las clases visuales que usaremos (como `.btn`, `.card`, `.navbar`, etc.).
 
-  </body>
-</html>
-```
-
-- Google
+1. Abre tu archivo `index.html`.
+2. Dentro de la etiqueta `<head>`, **antes de tu archivo `styles.css`**, pega este código:
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  </head>
-  <body>
-
-    <i class="material-icons">cloud</i>
-    <i class="material-icons">favorite</i>
-    <i class="material-icons">attachment</i>
-    <i class="material-icons">computer</i>
-    <i class="material-icons">traffic</i>
-
-  </body>
-</html>
+<!-- Bootstrap 5 CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
 ```
-
-[Siguiente](../reto-01)
