@@ -1,196 +1,203 @@
-# Ej. 03 - Agregando una nueva página
+# Ejercicio 03 - Agregar una nueva página: Gastronomía
+
+## Introducción
+
+Hasta ahora solo hemos trabajado con la página principal del sitio **"Descubre México"**, que muestra lugares icónicos y tradiciones culturales. En este ejercicio aprenderás a **crear una nueva página HTML** que amplíe la experiencia del sitio con más contenido, en este caso, sobre la **Gastronomía Mexicana**. También aprenderás cómo enlazar esta nueva página desde la navegación principal y mantener una apariencia consistente reutilizando estilos.
+
+---
 
 ## Objetivos
-1. Crear otra página con contenido dentro del proyecto.
-2. Enlazar esta nueva página con la primera para que se pueda navegar entre ellas.
-3. Utilizar más componentes de Bootstrap.
+
+- Crear una nueva página HTML llamada `gastronomia.html`.
+- Enlazarla desde el menú de navegación de `index.html`.
+- Reutilizar la estructura y estilos existentes para mantener consistencia.
+- Crear contenido sencillo en la nueva página que enriquezca el tema del sitio.
+
+---
 
 ## Requisitos
-- Tener instalado Visual Studio Code.
 
-## Instrucciones
+- Tener Visual Studio Code (u otro editor de texto).
+- Haber creado previamente el archivo `index.html` y su carpeta `css/` con el archivo `styles.css`.
 
-Hasta este momento, solo tenemos una página: `index.html`. Este es el archivo que el navegador buscará cuando entre a nuestra aplicación web, pero necesitamos más elementos para que  nuestro proyecto sea más funcional. Vamos a crear un nuevo archivo en el que agregaremos código y utilizaremos algunos estilos que ya hemos aplicado en `index.html`.
+---
 
-Empecemos por crear un nuevo archivo para el HTML y otro para sus estilos en la
-carpeta principal del proyecto:
+## Paso 1: Crear la nueva página
+
+Dentro de la carpeta raíz del proyecto, crea un nuevo archivo HTML y otro CSS:
 
 ```sh
-$ pwd # asegúrate que sea la carpeta del proyecto
-/ruta/al/proyecto
-$ touch pricing.html
-$ ls
-index.html   pricing.html   style.css
-$ touch pricing.css
-index.html   pricing.html   style.css   pricing.css
+$ touch gastronomia.html
+$ touch css/gastronomia.css
 ```
-Tenemos que "avisar" a nuestra página principal que ya agregamos nuestra nueva sección. ¿Recuerdas que en nuestro Navbar tenemos la opción de otras secciones? Agreguemos en nuestro código de `index.html` el enlace a la nueva sección **Pricing**.
+
+## Paso 2: Editar el menú de navegación en index.html
+
+Abre index.html y agrega un nuevo enlace en la barra de navegación:
 
 ```html
-  <!-- Archivo index.html -->
-
-  <!-- Aquí va el contenido del Navbar -->
-    <li class="nav-item">
-      <a class="nav-link" href="pricing.html">Pricing</a>
-    </li>
-
+<nav>
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#lugares">Lugares Icónicos</a></li>
+    <li><a href="#cultura">Cultura y Tradiciones</a></li>
+    <li><a href="gastronomia.html">Gastronomía</a></li>
+  </ul>
+</nav>
 ```
-¡Eso es todo! Nuestra página principal tiene ya establecido el enlace, con lo que al hacer clic en el Navbar en la opción **Pricing**, nuestro navegador cambiará la página que está mostrando de `index.html` a `pricing.html`.
 
->EXTRA Trata de agregar en pricing.html una referencia a la página principal, tanto al hacer clic en el navbar al texto correspondiente, como al hacer clic en la imagen de Matcha. Es el mismo procedimiento que hicimos al cambiar la referencia de pricing en la página principal.
-
-Ahora, crearemos el código HTML y le agregaremos la configuración de Bootstrap:
+## Paso 3: Crear la estructura base de gastronomia.html
 
 ```html
-<!-- pricing.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0,user-scalable=no"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Matcha - Pricing</title>
-    <!-- Agregamos la nueva página de estilos -->
-    <link rel="stylesheet" type="text/css" href="./pricing.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descubre México - Gastronomía</title>
+    <link rel="stylesheet" href="./css/gastronomia.css" />
   </head>
   <body>
-
-    <!-- Aquí agregaremos el nuevo contenido -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
-</html>
-```
-
-La barra de navegación debe ser igual a la del archivo `index.html`. Para ello, solo copiamos ese elemento en `pricing.html` y agregamos a `pricing.css` los estilos correspondientes:
-
-```html
-<!-- pricing.html -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0,user-scalable=no"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Matcha - Pricing</title>
-    <link rel="stylesheet" type="text/css" href="./pricing.css" />
-  </head>
-
-  <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="https://getmatcha.com/wp-content/themes/getmatcha/img/footer_logo.svg" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./platform.html">Platform</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Customers</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Resources</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-
-          </ul>
-          <div class="actions">
-            <a href="#">Sign In</a>
-            <button>Start Free Trial</button>
-          </div>
-        </div>
+    <header>
+      <img src="./img/jira.svg" alt="Chichén Itzá" width="50px" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#lugares">Lugares Icónicos</a></li>
+          <li><a href="index.html#cultura">Cultura y Tradiciones</a></li>
+          <li><a href="gastronomia.html">Gastronomía</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a>Sign In</a>
       </div>
-    </nav>
+    </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <main>
+      <section class="gastronomia-banner">
+        <h1>Sabores de México</h1>
+        <p>Explora la riqueza gastronómica que hace de México un país único.</p>
+      </section>
+
+      <section class="platillos">
+        <div class="card">
+          <img src="./img/tacos.jpg" alt="Tacos" />
+          <h2>Tacos</h2>
+          <p>
+            Uno de los platillos más representativos y versátiles de México.
+          </p>
+        </div>
+        <div class="card">
+          <img src="./img/mole.jpg" alt="Mole" />
+          <h2>Mole</h2>
+          <p>Una mezcla compleja de chiles, especias y chocolate.</p>
+        </div>
+        <div class="card">
+          <img src="./img/pozole.jpg" alt="Pozole" />
+          <h2>Pozole</h2>
+          <p>Tradicional sopa mexicana hecha a base de maíz y carne.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Descubre México</p>
+    </footer>
   </body>
 </html>
 ```
-Estos son los estilos de nuestra navbar:
+
+## Paso 4: Crear los estilos en gastronomia.css
 
 ```css
-/** pricing.css */
-  @import url("https://fonts.googleapis.com/css?family=Alegreya:900|Open+Sans|Slabo+27px&display=swap");
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffaf5;
+  color: #333;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c1272d;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 75px;
+}
 
-  body {
-    background-color: #fffbf7;
-    font-family: "Open Sans", sans-serif;
-  }
+header img {
+  padding: 10px;
+}
 
-  .navbar {
-    background-color: #fffbf7;
-  }
+header .actions {
+  background-color: #1d8b24;
+  padding: 15px;
+  color: #f4f4f4;
+  cursor: pointer;
+}
 
-  .navbar-light .nav-item .nav-link {
-    color: #025157;
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin: 0;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav ul li a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  background-color: #8b1d24;
+  border-radius: 5px;
+}
 
-  .navbar-light .navbar-toggler {
-    border-color: #025157;
-  }
+.gastronomia-banner {
+  margin-top: 100px;
+  text-align: center;
+  background-color: #fefbf7;
+  padding: 40px 20px;
+}
 
-  .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(3, 81, 77)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
+.platillos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
 
-  .actions {
-    text-align: right;
-    font-weight: 600;
-    font-size: 14px;
-  }
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  margin: 20px;
+}
 
-  .actions > * {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-  .actions a {
-    color: #67b54b;
-  }
-
-  .actions button {
-    color: white;
-    background-color: #67b54b;
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border: 0;
-    border-radius: 5px;
-  }
-
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+}
 ```
+## Resultado esperado
 
-Con estos estilos y estructura extraídas de nuestro `index.html` obtenemos la
-misma barra de navegación, pero ahora en `pricing.html`.
-
-[Siguiente](../reto-04/README.md)
+Al hacer clic en “Gastronomía” en la barra de navegación de index.html, serás llevado a gastronomia.html, donde verás una nueva sección con contenido relevante y con el mismo estilo del sitio principal.
