@@ -1,8 +1,8 @@
-# Reto 02 - Agregar Carousel y la primera tarjeta
+# Reto 02 - Agregar un carrusel de lugares turísticos
 
 ## Introducción
 
-En este reto aprenderás a **insertar componentes dentro de otros** usando Bootstrap. Vamos a utilizar un componente de carrusel (`Carousel`) para mostrar casos de éxito, y dentro de cada diapositiva insertaremos tarjetas (`Card`) personalizadas. Este ejercicio te ayudará a comprender mejor la composición visual y cómo organizar contenido usando Bootstrap de forma más avanzada.
+Vamos a utilizar un componente de carrusel (Carousel) para mostrar lugares turísticos representativos de México, y dentro de cada diapositiva insertaremos tarjetas (Card) personalizadas.
 
 ---
 
@@ -29,39 +29,32 @@ En este reto aprenderás a **insertar componentes dentro de otros** usando Boots
 Reemplaza el contenido del primer `img` dentro del `Carousel` por el contenido de tu tarjeta personalizada. Ejemplo:
 
 ```html
-<div class="carousel-item active">
-  <!-- Tarjeta 1: Everly -->
-  <div class="card">
-    <img
-      src="https://getmatcha.com/wp-content/uploads/2019/05/profile-headshot-square.png"
-      class="card-img-top"
-      alt="Everly"
-    />
-    <div class="card-body">
-      <div class="card-circle everly">
-        <img
-          src="https://getmatcha.com/wp-content/uploads/2019/05/everly_logo_blue_v3_x60@2x.png"
-          alt="Everly"
-        />
+<section class="turismo-carousel">
+  <h2>Destinos turísticos de México</h2>
+  <div class="carousel-item active">
+    <!-- Tarjeta 1: CDMX -->
+    <div class="card">
+      <img src="./img/cdmx.webp" class="card-img-top" alt="Ciudad de México" />
+      <div class="card-body">
+        <div class="card-circle cdmx">
+          <img src="./img/cancun.jpg" alt="Imagen de Cancún" />
+        </div>
+        <h4>Ciudad de México</h4>
+        <h3>
+          Conoce una de las ciudades más vibrantes de América Latina, llena de
+          historia, cultura y gastronomía.
+        </h3>
+        <div class="results">
+          <img src="./img/chichenitza.jpeg" alt="Icono de Chichén Itzá" />
+          <p>Visitada por más de 12 millones de turistas al año</p>
+        </div>
       </div>
-      <h4>Everly</h4>
-      <h3>
-        Early-Stage CPG Brand Increases Lead Conversion 20x, Ecommerce Revenue
-        20%
-      </h3>
-      <div class="results">
-        <img
-          src="https://getmatcha.com/wp-content/themes/getmatcha/img/icon_cart.png"
-          alt="Cart icon"
-        />
-        <p>22% of monthly revenue influenced by content</p>
+      <div class="card-footer">
+        <button>Ver más</button>
       </div>
-    </div>
-    <div class="card-footer">
-      <button>See Case Study</button>
     </div>
   </div>
-</div>
+</section>
 ```
 
 ### Paso 2: Agrega las dos tarjetas restantes
@@ -73,26 +66,26 @@ Repite el mismo patrón anterior en los otros `carousel-item`, remplazando las s
 Agrega los siguientes estilos en tu archivo CSS para asegurar que las tarjetas tengan el tamaño, proporción y visual esperados:
 
 ```css
-.success-stories .card {
+.turismo-carousel .card {
   max-width: 370px;
   width: 100%;
   min-height: 600px;
   margin: 0 auto;
 }
 
-.success-stories .card img {
+.turismo-carousel .card img {
   max-height: 30vh;
   object-fit: cover;
 }
 
-.success-stories .card .card-body {
+.turismo-carousel .card .card-body {
   max-width: 370px;
   width: 100%;
   position: relative;
   padding: 40px 1rem 1rem;
 }
 
-.success-stories .card .card-body h4 {
+.turismo-carousel .card .card-body h4 {
   color: #025157;
   font-size: 18px;
   font-weight: 600;
@@ -101,29 +94,29 @@ Agrega los siguientes estilos en tu archivo CSS para asegurar que las tarjetas t
   font-family: "Slabo 27px", serif;
 }
 
-.success-stories .card .card-body h3 {
+.turismo-carousel .card .card-body h3 {
   font-size: 25px;
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 20px;
 }
 
-.success-stories .card .card-body .results {
+.turismo-carousel .card .card-body .results {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.success-stories .card .card-body .results img {
+.turismo-carousel .card .card-body .results img {
   width: 26px;
   margin-right: 20px;
 }
 
-.success-stories .card .card-body .results p {
+.turismo-carousel .card .card-body .results p {
   margin: 0;
 }
 
-.success-stories .card .card-footer button {
+.turismo-carousel .card .card-footer button {
   display: block;
   margin-left: 0;
   border-radius: 5px;
@@ -136,13 +129,13 @@ Agrega los siguientes estilos en tu archivo CSS para asegurar que las tarjetas t
   border: none;
 }
 
-.success-stories .card .card-footer {
+.turismo-carousel .card .card-footer {
   background-color: #ffffff;
   color: #fff;
   border: none;
 }
 
-.success-stories .card .card-body .card-circle {
+.turismo-carousel .card .card-body .card-circle {
   display: flex;
   align-items: center;
   position: absolute;
@@ -154,12 +147,12 @@ Agrega los siguientes estilos en tu archivo CSS para asegurar que las tarjetas t
   padding: 5px;
 }
 
-.success-stories .card .card-body .card-circle.everly {
+.turismo-carousel .card .card-body .card-circle.cdmx {
   background-color: #f9da73;
   border: 5px solid #f9da73;
 }
 
-.success-stories .card .card-body .card-circle.everly img {
+.turismo-carousel .card .card-body .card-circle.cdmx img {
   object-fit: contain;
   width: 100%;
 }
@@ -172,4 +165,3 @@ Agrega los siguientes estilos en tu archivo CSS para asegurar que las tarjetas t
 Tu carrusel debe mostrar tres tarjetas personalizadas en lugar de imágenes simples. Cada tarjeta debe estar bien alineada, contener su contenido relevante y funcionar correctamente dentro del carrusel, con transiciones suaves y estilos coherentes.
 
 ---
-
