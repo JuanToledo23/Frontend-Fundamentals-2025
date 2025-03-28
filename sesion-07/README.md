@@ -1,33 +1,73 @@
-# Sesión 07: Optimizando la producción de CSS
+# 🎯 Sesión 07: Optimizando la producción de CSS
 
-## Introducción
+Bienvenido a la séptima sesión de **Front End Fundamentals**. Hoy daremos un gran paso hacia la escritura de **estilos más profesionales, organizados y reutilizables** usando un preprocesador de CSS llamado **Sass** (Syntactically Awesome Stylesheets).
 
-CSS es un lenguaje bastante poderos para lo que está diseñado a hacer: aplicar estilos a los elementos de HTML. Sin embargo, hay una categoría más de lenguajes que podemos usar para estilar nuestra página. Estos son denominados CSS preprocessors, entre los que está SASS. Este lenguaje y su derivado, SCSS, son utilizados para optimizar el código del CSS y le dan algunos súper poderes, como es poder hacer cálculos complejos, estructuras de control, funciones y otras cosas que aprenderás durante esta sesión.
+---
 
-## Objetivos
+## 🧠 Introducción
 
-En esta sesión aprenderás:
+CSS es un lenguaje poderoso para aplicar estilos a los elementos HTML. Sin embargo, cuando los proyectos crecen, el código CSS puede volverse difícil de mantener.
 
-- Sobre preprocesadores de CSS.
-- Optimizar la producción de CSS con Sass.
-- Agregar las secciones restantes de la página original de Matcha.
+Aquí es donde entran los **preprocesadores de CSS** como Sass y SCSS, los cuales nos permiten:
 
-## Requisitos
-- Tener instalado Visual Studio Code
-- Tener instalado SASS (versión dart) o, en su defecto, la extensión de Visual Studio Code denominada Live SASS compiler.
+- Usar **variables**, **funciones**, **condicionales** y **bucles**.
+- Separar el código en **módulos reutilizables**.
+- **Optimizar** y **escalar** la producción de estilos CSS.
 
-## Organización de la clase
+En esta sesión trabajaremos con **SCSS**, la sintaxis más amigable para quienes ya están familiarizados con CSS tradicional.
 
-- [Ejemplo 01: Empezando a estructurar Sass ( 15 minutos ) ](./Ejemplo-01/README.md)
+---
 
-- [Ejemplo 02:  Agregando primera columna del blog ( 25 minutos ) ](./Ejemplo-02/README.md)
+## 🚀 Objetivos de aprendizaje
 
-- [Ejemplo 03: Agregando segunda columna del blog ( 15 minutos ) ](./Ejemplo-03/README.md)
+Al finalizar esta sesión podrás:
 
-- [Reto 01: Agrega colores usados en las tarjetas ( 15 minutos ) ](./reto-01/README.md)
+- Entender qué es Sass y cómo se usa en proyectos reales.
+- Escribir estilos usando la sintaxis SCSS.
+- Organizar tu CSS en módulos reutilizables.
+- Compilar SCSS a CSS utilizando herramientas como Dart Sass o extensiones de VS Code.
+- Aplicar Sass a la estructura de columnas de blog de la página original de _Matcha_.
 
-- [Reto 02: Agrega la tercera columna ( 25 minutos ) ](./reto-02/README.md)
+---
 
-- [Postwork](./postwork/README.md)
+## 🧰 Requisitos
 
-[Regresar](../README.md)
+Antes de comenzar, asegúrate de tener lo siguiente instalado en tu entorno de desarrollo:
+
+- **Visual Studio Code**
+- Una de las siguientes opciones para compilar Sass:
+  - [✅ Dart Sass](https://sass-lang.com/install)
+  - [🧩 Live Sass Compiler Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) para Visual Studio Code
+
+---
+
+## 🗂️ Organización de la clase
+
+| Tipo        | Actividad                                                                   | Duración estimada |
+| ----------- | --------------------------------------------------------------------------- | ----------------- |
+| 🧪 Ejemplo  | [Ejemplo 01: Empezando a estructurar Sass](./Ejemplo-01/README.md)          | 15 minutos        |
+| 🧪 Ejemplo  | [Ejemplo 02: Agregando la primera columna del blog](./Ejemplo-02/README.md) | 25 minutos        |
+| 🧪 Ejemplo  | [Ejemplo 03: Agregando la segunda columna del blog](./Ejemplo-03/README.md) | 15 minutos        |
+| 🧠 Reto     | [Reto 01: Agrega colores usados en las tarjetas](./reto-01/README.md)       | 15 minutos        |
+| 🧠 Reto     | [Reto 02: Agrega la tercera columna del blog](./reto-02/README.md)          | 25 minutos        |
+| 🧩 Postwork | [Postwork - Práctica con Sass](./postwork/README.md)                        | —                 |
+
+---
+
+## 💡 Consejos
+
+- Usa variables para almacenar colores, tamaños y fuentes que se repitan en el proyecto.
+- Organiza tu código SCSS en **partials** (`_colores.scss`, `_layout.scss`, etc.) y luego **importa todo en un archivo principal** (`styles.scss`).
+- Aprovecha los mixins para evitar repetición.
+- Compila constantemente para ver cambios reflejados en el navegador.
+
+---
+
+## 🧭 ¿Qué sigue?
+
+Después de esta sesión estarás listo para trabajar estilos de forma mucho más eficiente, modular y escalable.  
+Lo aprendido con Sass te servirá no solo en proyectos personales, sino también en proyectos grandes o profesionales.
+
+---
+
+📎 [Volver al índice general del curso](../README.md)

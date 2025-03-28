@@ -1,54 +1,67 @@
-**Front-End Fundamentals**
-
-**POSTWORK**
-
-Sesión 07
-
-**Optimizando la producción de CSS**
-
-**Objetivo**
-
-- Crear la sección Try Matcha free for 7 days.
-- Utiliza Flexbox/Grid para acomodar los elementos en pantalla.
+# 🧩 Postwork – Sesión 07: Optimizando la producción de CSS
 
 ---
-<br/>
 
-### **Desarrollo**
+## 🎯 Objetivo
 
-En esta sesión hemos visto cómo optimizar nuestro código CSS haciéndolo que se genere de una manera más programática y que sea más fácil de distribuir y mantener.
+- Agregar una nueva sección a la landing page **"Descubre México"** utilizando Sass.
+- Utilizar **Flexbox o CSS Grid** para distribuir los elementos de manera responsiva.
+- Aplicar lo aprendido sobre **variables, módulos, placeholders y nesting** en Sass.
 
-Ahora qué tal si practicamos un poco más con Sass para seguir avanzando en nuestro proyecto de Matcha, las 2 siguientes secciones son pequeñas, pero se pueden beneficiar de lo que hemos aprendido durante esta sesión, así que, trata por tu cuenta de desarrollar la apariencia de esta imagen.
+---
 
-[Secciones finales](../assets/matcha-example.png)
+## 📘 Desarrollo
 
-<br />
+En esta sesión aprendiste a usar Sass para mejorar la organización, reutilización y mantenibilidad de tu código CSS.
 
-En esta sección, usa el **devtools** para poder obtener la imagen de fondo. Asimismo, trata de usar las variables lo más que puedas para personalizar la apariencia de los formularios y si ves necesario abstraer esta sección de estilos en un módulo más, adelante, siéntete libre de hacerlo.
+Ahora vas a aplicar esos conocimientos creando una nueva sección en la landing page **"Descubre México"**.  
+Puedes elegir libremente el contenido de esta sección, pero algunas ideas podrían ser:
 
-[Seccion adcional](../assets/matcha-tryfree.png)
-<br/>
+- Una sección de **testimonios de turistas**.
+- Una llamada a la acción para **suscribirse a un boletín**.
+- Una galería visual de **fotos destacadas**.
 
-Y en esta sesión, abstrae tus estilos para que reutilices lo más que puedas, como el formulario que es muy similar al implementado anteriormente pero con un color distinto en el botón.
-<br/>
+---
 
-**🎞 Video 01.  Ejercicios de selectores descendientes CSS**
+## 🛠 Instrucciones
 
-Aquí puedes ver un video en español con ejercicios para utilizar selectores de tipo descendiente (no descendente) para elegir los elementos donde aplicarás los estilos deseados.
+1. Crea una nueva sección HTML dentro de `index.html`, después del bloque `<section class="promo">`.
+2. Diseña esta sección con **Flexbox o Grid** para distribuir los elementos correctamente.
+3. Usa **Sass** para escribir los estilos y organiza tu código en un archivo SCSS nuevo, por ejemplo: `_extras.scss`.
+4. Asegúrate de reutilizar variables definidas en `_global.scss` (colores, fuentes, tamaños, etc.).
+5. Usa DevTools para analizar otros estilos del sitio y mantener coherencia visual.
 
-[selectores descendientes](https://www.youtube.com/watch?v=r4eeXd8LrcY)
+---
 
+## 🧠 Reto adicional
 
-✅ **Checklist**
+Investiga si es posible aplicar **condicionales con `@if` en Sass**.  
+¿En qué casos reales podrías usar condicionales en tus estilos dentro de un sitio como "Descubre México"?
 
-Asegúrate que tu postwork contenga todo lo siguiente, ya que esto se evaluará al término del módulo. Recuerda que la sección que deberás trabajar es la vista en clase, denominada “Casos de Éxito” .
+Puedes consultar: [Condicionales en Sass](https://sass-lang.com/documentation/at-rules/control/if)
 
+---
 
-|**Requisito**|**Sí lo cumple**|**No lo cumple**|
-| :-: | :-: | :-: |
-|A. Lograr elaborar las dos secciones finales de la página.|||
-|B. Usar la consola de desarrollador para obtener colores y estilos.|||
+## ✅ Checklist
 
-<br/>
+Marca cada punto completado antes de entregar tu postwork.  
+Esta lista será considerada en la evaluación al final del módulo.
 
-[Regresar](../README.md)
+| Requisito                                                            | ✅ Sí lo cumple | ❌ No lo cumple |
+| -------------------------------------------------------------------- | :-------------: | :-------------: |
+| A. Agregó una nueva sección a la landing de "Descubre México".       |                 |                 |
+| B. Usó Sass para estructurar los estilos y los organizó por módulos. |                 |                 |
+| C. Aplicó Flexbox o Grid correctamente.                              |                 |                 |
+| D. Reutilizó variables y placeholders definidos previamente.         |                 |                 |
+
+---
+
+## 🧩 Recursos opcionales
+
+- [Flexbox guide (CSS-Tricks)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Grid guide (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [Documentación oficial de Sass](https://sass-lang.com/documentation)
+
+---
+
+📎 [Regresar al índice general del curso](../README.md)

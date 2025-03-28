@@ -1,43 +1,93 @@
-# Reto 01 - Agrega colores usados en las tarjetas
-
-## Objetivos
-- Agregar nuevas variables de color en SCSS
-- Utilizar la consola de desarrollador del navegador para obtener información de los elementos de la página de Matcha.
+# 🧠 Reto 01: Agrega colores usados en las tarjetas
 
 ---
-<br/>
 
-## Requisitos
-- Tener instalado Visual Studio Code.
+## 🎯 Objetivos
+
+- Usar la DevTools del navegador para inspeccionar elementos.
+- Agregar nuevas variables de color en tu archivo SCSS.
+- Aplicar estos nuevos colores a los estilos de la sección del blog.
 
 ---
-<br/>
 
-## Instrucciones
+## ✅ Requisitos previos
 
-Consulta en internet las fuentes que se pueden utilizar en los sitios web, selecciona dos de ellas (instalas de ser necesario) y cambia los estilos de tu sitio para que use al menos estas dos fuentes.
+- Tener instalado **Visual Studio Code**.
+- Tener configurado Sass correctamente.
+- Tener ya creada la carpeta `scss/` y los archivos `_global.scss` y `main.scss`.
 
-<br/>
+---
+
+## 🔍 Instrucciones
+
+1. Abre tu navegador y utiliza la herramienta de desarrollador (DevTools) para **inspeccionar los colores** de texto, botones o fondos en la sección del blog.
+2. Elige **dos nuevos colores** que puedas reutilizar para mejorar la sección del blog o las tarjetas.
+3. Define estos colores como **variables SCSS** dentro de tu archivo `_global.scss`.
+4. Usa esas variables dentro de `main.scss` para actualizar los estilos existentes o agregar nuevos.
+
+---
+
+## 💡 Tip
+
+Si quieres experimentar con nuevas tipografías para la landing _Descubre México_, puedes consultar:
+
+- [Google Fonts](https://fonts.google.com/)
+- [FontPair](https://fontpair.co/)
+
+Una vez que elijas tus fuentes, puedes agregarlas en el `<head>` de tu `index.html`:
+
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Y luego definirlas como variables SCSS:
+
+```scss
+// _global.scss
+
+// Fuentes
+$font-title: "Playfair Display", serif;
+$font-body: "Open Sans", sans-serif;
+```
+
+---
 
 <details>
-  <summary>Posible solución</summary>
+  <summary>💡 Posible solución</summary>
 
-Definimos los colores en `_global.scss`:
+Agregar nuevas variables de color en `_global.scss`:
 
-```scss{7-9}
-/** _global.scss */
+```scss
+// _global.scss
 
-/** colores */
 $dark-green-title: #025157;
 $dark-green-text: #135359;
 $white: #ffffff;
+
+// Nuevos colores propuestos
 $gray: #4a4a4a;
 $light-gray: #979797;
 $light-green: #67b54b;
 ```
 
+Luego puedes usar estas variables dentro de tus componentes en `main.scss`:
+
+```scss
+.card {
+  background-color: $light-gray;
+  color: $gray;
+}
+```
+
 </details>
 
-<br/>
+---
 
-[Siguiente](../reto-02/README.md)
+✅ ¡Listo! Este reto te ayudará a profesionalizar tu sistema de diseño en Sass, reutilizando colores de forma ordenada y eficiente.
+
+---
+
+📎 [Ir al Reto 02 → Agrega la tercera columna del blog](../reto-02/README.md)

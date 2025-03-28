@@ -1,42 +1,56 @@
-# Ej. 01 - Empezando a estructurar Sass
-
-## Objetivo
-- Establecer la estructura de SASS para nuestro proyecto, siguiendo mejores prácticas.
-- Configurar el compilador de SASS para obtener nuestra hoja de estilos.
+# 🧪 Ejemplo 01: Empezando a estructurar Sass
 
 ---
-<br/>
 
-## Requisitos
-- Tener instalado Visual Studio Code.
-- Tener instalado SASS versión dart.
+## 🎯 Objetivos
+
+- Establecer una estructura básica de archivos SCSS siguiendo buenas prácticas.
+- Configurar el compilador de Sass para generar una hoja de estilos lista para producción.
 
 ---
-<br/>
 
-## Desarrollo
-Sass nos permite detectar dos tipos de archivos, los que tienen extensión `.scss`
-ó `.sass`. El primero tiene dicha extensión porque su sintaxis base es muy
-similar a la de CSS, mientras que el segundo es una sintaxis particular (por
-ejemplo: no usa llaves `{}` para englobar las propiedades de un selector). En
-nuestro caso, usaremos la extensión `.scss` porque creemos que te será más fácil
-de usar debido a lo que hemos ido aprendiendo en el curso. Dado que vamos a
-estar usando diversos archivos de Sass, crearemos una carpeta llamada `scss` a
-la misma altura de nuestros archivos principales (`index.html` y `styles.css`) y
-aprovecharemos en crear un archivo llamado `main.scss` dentro de esta carpeta.
+## ✅ Requisitos previos
 
-La estructura de nuestro proyecto debería verse algo así:
+- Tener instalado **Visual Studio Code**.
+- Tener instalado **Sass (versión Dart)** en tu sistema.  
+  Puedes instalarlo siguiendo las instrucciones en [sass-lang.com/install](https://sass-lang.com/install)
 
-```text
+---
+
+## 🛠️ Desarrollo paso a paso
+
+### 1. ¿SCSS o SASS?
+
+Sass ofrece dos tipos de sintaxis:
+
+- `.sass`: sintaxis indentada (no usa llaves ni punto y coma).
+- `.scss`: sintaxis compatible con CSS (usa llaves y punto y coma).
+
+Usaremos `.scss` porque es más cercana al CSS tradicional y más fácil de adoptar.
+
+---
+
+### 2. Estructura de carpetas
+
+Vamos a crear una carpeta `scss` donde estará el código fuente en Sass. Tu proyecto debería verse así:
+
+```
 .
-+-- scss/
-+----- main.scss
-+-- index.html
-+-- styles.css
+├── scss/
+│   └── main.scss
+├── index.html
+├── output.css
+├── styles.css
 ```
 
-Una vez con la estructura de archivos creada, abre el archivo `main.scss` y
-comencemos por escribir una clase para ver un ejemplo de lo que podemos lograr:
+> El archivo `output.css` será generado automáticamente a partir del archivo Sass.  
+> `styles.css` sigue siendo tu hoja de estilos principal. Puedes seguir usándola para otras secciones si lo deseas, o ir migrando todo a Sass progresivamente.
+
+---
+
+### 3. Escribiendo tu primer archivo `.scss`
+
+Dentro de `scss/main.scss`, escribe lo siguiente:
 
 ```scss
 .blog {
@@ -44,52 +58,71 @@ comencemos por escribir una clase para ver un ejemplo de lo que podemos lograr:
 }
 ```
 
-Ahora, ubicado en la raíz del proyecto, vamos a ejecutar el siguiente comando:
+---
+
+### 4. Compilando Sass
+
+Abre tu terminal, navega a la raíz del proyecto y ejecuta este comando:
 
 ```bash
-$ pwd # asegúrate de estar en la raíz del proyecto
-/ruta/al/proyecto
-$ sass --watch scss/main.scss output.css # la salida debería salir algo similar
+sass --watch scss/main.scss output.css
+```
+
+Este comando hace que Sass **monitoree** los cambios en `main.scss` y genere automáticamente el archivo `output.css` cada vez que guardes.
+
+👉 Verás algo como esto en la terminal:
+
+```
 Compiled scss/main.scss to output.css.
 Sass is watching for changes. Press Ctrl-C to stop.
 ```
 
-Este comando lo que hace es _"escuchar"_ los cambios que realizamos en los
-archivos relacionados al `scss/main.scss` y cada vez que guardemos uno, este
-generará un archivo llamado `output.css` y `output.css.map` con el código de CSS
-que se generó a partir del archivo escrito en Sass.
+---
 
-Por último, para que podamos usar el CSS generado por nuestro código en Sass,
-tenemos que agregar enlazar el `output.css` a nuestro HTML de la siguiente
-manera:
+### 5. Enlazando el CSS compilado a tu HTML
+
+En tu archivo `index.html`, agrega un enlace al archivo `output.css`:
 
 ```html
 <!-- index.html -->
 <head>
   <!-- Aquí vienen los enlaces a Bootstrap y styles.css -->
-  <link rel="stylesheet" type="text/css" href="./styles.css" />
+  <link rel="stylesheet" href="./output.css" />
 </head>
 ```
 
-Agreguemos en el HTML la sección del blog que construiremos usando Sass:
+---
+
+### 6. Agregando la sección del blog a la landing
+
+Integra esta sección dentro del `<body>` de tu archivo `index.html`, justo antes del footer, o donde consideres que tiene sentido:
 
 ```html
-<body>
-  <!-- Aquí vienen las demás secciones -->
-  <section class="blog"></section>
-  <!-- Aquí vienen los scripts de Bootstrap -->
-</body>
+<!-- Sección de Blog -->
+<section class="blog">
+  <h2>Explora nuestro blog</h2>
+  <p>Descubre artículos sobre cultura, viajes y tradiciones mexicanas.</p>
+</section>
 ```
 
-Con esto, si inspeccionamos la sección en el devtools veremos que nuestra
-sección tiene el fondo de color blanco como lo definimos en el archivo de Sass.
+Este bloque utilizará los estilos definidos en tu `main.scss`.
+
+---
+
+### 7. Verificando en el navegador
+
+Abre el sitio en tu navegador e inspecciona con DevTools. Verás que la sección `.blog` tiene el fondo blanco como se definió en el archivo SCSS.
 
 ![Estilos de sass en el devtools](../assets/sass-devtools.png)
 
-¡Yay! Ya estamos listos para empezar a escribir código en Sass. ¿Te diste cuenta
-que el código que escribimos fue exactamente igual que solo CSS? Entonces, ¿cuál
-es la ventaja de usarlo? Es lo que vamos a descubrir en el siguiente apartado.
+---
 
-<br/>
+## 🎉 ¿Y ahora qué?
 
-[Siguiente](../Ejemplo-02/README.md)
+Acabamos de escribir SCSS y compilarlo exitosamente a CSS. ¿Notaste que el código se ve casi igual a CSS puro?  
+La verdadera magia de Sass empieza cuando usamos **variables, mixins, estructuras y funciones**.  
+¡Eso es justo lo que exploraremos a continuación!
+
+---
+
+📎 [Ir al Ejemplo 02 → Agregando la primera columna del blog](../Ejemplo-02/README.md)
