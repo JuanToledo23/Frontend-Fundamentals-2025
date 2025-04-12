@@ -4,32 +4,27 @@
 
 ## 🎯 Objetivos
 
-1. Practicar la maquetación completa de una nueva página en tu sitio **"Descubre México"**.
+1. Practicar la **maquetación completa** de una nueva página en tu sitio **"Descubre México"**.
 2. Usar la consola del navegador para inspeccionar elementos, colores y estilos.
-3. Preparar la base para agregar transiciones y animaciones en los siguientes retos.
+3. Preparar la base visual para aplicar **transiciones y animaciones** en los siguientes ejercicios.
 
 ---
 
 ## ✅ Requisitos
 
 - Tener instalado **Visual Studio Code**.
-- Haber creado la página `about.html` y el archivo `about.scss` en tu proyecto.
+- Haber creado los archivos:
+  - `about.html` (dentro del proyecto)
+  - `_about.scss` (dentro de la carpeta `scss`)
+- Tener configurado Sass o Live Sass Compiler.
 
 ---
 
-## 🛠 Instrucciones
+## 🛠 Instrucciones paso a paso
 
-En este reto crearás una nueva página que amplíe la información sobre México, aplicando todo lo aprendido hasta ahora en HTML, SCSS, Bootstrap y estructura responsive.
+### 1. Crea la estructura base en `about.html`
 
-Puedes basarte visualmente en una sección de testimonios, características del país o datos culturales.
-
----
-
-## ✏️ Paso a paso
-
-### 1. Estructura básica de `about.html`
-
-Usa Emmet para generar la estructura base:
+Abre tu archivo `about.html` y pega el siguiente contenido:
 
 ```html
 <!DOCTYPE html>
@@ -41,70 +36,59 @@ Usa Emmet para generar la estructura base:
   <link rel="stylesheet" href="./about.css" />
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="#lugares">Lugares Icónicos</a></li>
+        <li><a href="#cultura">Cultura y Tradiciones</a></li>
+        <li><a href="./about.html">Sobre México</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a>Sign In</a>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <section class="top-info">
+      <h1>Descubre más sobre México</h1>
+      <p>México es un país lleno de contrastes, historia, sabores y colores.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <img src="./img/food.svg" alt="Gastronomía">
+        <h3>Gastronomía</h3>
+        <p>Una de las más reconocidas del mundo por su diversidad de ingredientes, colores y sabores.</p>
+      </div>
+      <div class="feature">
+        <img src="./img/see.png" alt="Naturaleza">
+        <h3>Naturaleza</h3>
+        <p>Desde playas paradisíacas hasta selvas y montañas, México lo tiene todo.</p>
+      </div>
+      <div class="feature">
+        <img src="./img/chichenitza.jpeg" alt="Historia">
+        <h3>Historia</h3>
+        <p>Hogar de civilizaciones como los mayas y aztecas, con sitios arqueológicos impresionantes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Descubre México</p>
+  </footer>
 </body>
 </html>
 ```
 
-> 💡 Pro-tip: Escribe `!` + `Tab` en un archivo `.html` vacío para autocompletar la estructura.
+> 💡 Este contenido incluye una cabecera, sección principal con información cultural y una galería de tarjetas.
 
 ---
 
-### 2. Agrega cabecera y navegación
+### 2. Crea los estilos en `_about.scss`
 
-Copia la cabecera que usas en `index.html` para mantener consistencia. Asegúrate de actualizar los enlaces y el título.
-
-```html
-<header>
-  <nav>
-    <ul>
-      <li><a href="./index.html">Inicio</a></li>
-      <li><a href="#lugares">Lugares Icónicos</a></li>
-      <li><a href="#cultura">Cultura y Tradiciones</a></li>
-      <li><a href="./about.html">Sobre México</a></li>
-    </ul>
-  </nav>
-  <div class="actions">
-    <a>Sign In</a>
-  </div>
-</header>
-```
-
----
-
-### 3. Estructura del contenido
-
-Crea una nueva sección principal para mostrar información sobre el país. Puedes usar un diseño de columnas con Bootstrap o Flexbox. Aquí un ejemplo básico con clases personalizadas:
-
-```html
-<main class="about-page">
-  <section class="top-info">
-    <h1>Descubre más sobre México</h1>
-    <p>México es un país lleno de contrastes, historia, sabores y colores.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <img src="./img/food.svg" alt="Gastronomía">
-      <h3>Gastronomía</h3>
-      <p>Una de las más reconocidas del mundo por su diversidad de ingredientes, colores y sabores.</p>
-    </div>
-    <div class="feature">
-      <img src="./img/see.png" alt="Naturaleza">
-      <h3>Naturaleza</h3>
-      <p>Desde playas paradisíacas hasta selvas y montañas, México lo tiene todo.</p>
-    </div>
-    <div class="feature">
-      <img src="./img/chichenitza.jpeg" alt="Historia">
-      <h3>Historia</h3>
-      <p>Hogar de civilizaciones como los mayas y aztecas, con sitios arqueológicos impresionantes.</p>
-    </div>
-  </section>
-</main>
-```
-
----
-
-### 4. Estilos base en `about.scss`
+Agrega lo siguiente en el archivo `scss/_about.scss`:
 
 ```scss
 .about-page {
@@ -162,22 +146,46 @@ Crea una nueva sección principal para mostrar información sobre el país. Pued
 
 ---
 
-### 5. Compila Sass
+### 3. Importa `_about.scss` desde `main.scss`
 
-Ejecuta Sass para que tu archivo `.scss` se convierta en CSS usable por el navegador:
+Abre tu archivo `main.scss` y asegúrate de importar la hoja de estilos nueva:
+
+```scss
+@use 'about' as *;
+```
+
+---
+
+### 4. Compila Sass
+
+En la terminal, asegúrate de estar en la raíz del proyecto y ejecuta:
 
 ```bash
-sass --watch scss/about.scss about.css
+sass --watch scss/main.scss about.css
 ```
+
+> Esto generará un nuevo archivo `about.css` listo para ser usado en el HTML.
 
 ---
 
 ## ✅ Resultado esperado
 
-Tu nueva página `about.html` debe contener una cabecera funcional, una introducción breve y tres tarjetas visuales con contenido informativo sobre México.
+Tu nueva página `about.html` debe mostrar lo siguiente:
 
-📸 Referencia visual:
+- ✅ Una cabecera igual a la de `index.html`.
+- ✅ Una sección principal con título, párrafo y 3 tarjetas con información cultural.
+- ✅ Estilos aplicados desde `about.scss`.
+
+📸 Resultado visual:
 ![Página de About Us completa.](../assets/AboutUsCompleta.png)
+
+---
+
+## 📚 ¿Qué aprendiste?
+
+- Cómo maquetar una nueva página sin romper el estilo general del sitio.
+- Cómo estructurar una sección informativa con tarjetas.
+- Cómo preparar la base visual para comenzar a aplicar **animaciones y transiciones** en los siguientes retos.
 
 ---
 

@@ -4,44 +4,47 @@
 
 ## 🎯 Objetivos
 
-1. Usar `@keyframes` para crear una animación con movimiento en eje vertical.
-2. Aplicar múltiples animaciones en un mismo elemento.
-3. Comprender el uso combinado de `position`, `top`, `left` y `animation`.
+1. Usar `@keyframes` para animar un elemento verticalmente con CSS.
+2. Aplicar múltiples animaciones simultáneas en un solo elemento.
+3. Comprender cómo usar `position`, `top`, `left` y `animation` de forma conjunta.
 
 ---
 
 ## ✅ Requisitos
 
-- Tener configurado tu proyecto de **"Descubre México"**.
-- Tener instalado **Visual Studio Code**.
-- Haber creado y vinculado correctamente el archivo `about.scss`.
+- Tener configurado tu proyecto **"Descubre México"**.
+- Tener creado y vinculado correctamente el archivo `about.scss`.
+- Contar con el archivo `about.html` funcionando en navegador.
 
 ---
 
 ## 🛠 Instrucciones
 
-Para cerrar esta sesión, vas a agregar una flecha animada que:
+Para cerrar esta sesión con broche de oro, vas a **animar una flecha** que:
 
-- Se mueva hacia abajo (60px) y luego regrese a su posición original.
-- Se posicione en el centro de la pantalla usando el sistema de columnas de Bootstrap.
-- Incluya una segunda animación opcional que se mueva de izquierda a derecha.
+- Se mueva de arriba hacia abajo (60px).
+- Vuelva a su posición original en bucle.
+- Opcional: también se mueva de izquierda a derecha.
+- Se centre usando el sistema de columnas de Bootstrap.
 
 ---
 
-### 📸 Resultado esperado
+## 📸 Resultado esperado
 
 - Estado inicial:
   ![Estado inicial de la animación](../assets/flecha_animada.png)
-- Elemento a usar:
+- Imagen a utilizar:
   ![Flecha para animar](../assets/green-arrow.png)
 
-Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
+🔽 Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
 
 ---
 
 ## ✏️ Paso a paso
 
-### 1. HTML para insertar la flecha en `about.html`
+### 1. Agrega el HTML en `about.html`
+
+Coloca esto dentro del `<main>` de tu archivo `about.html`, debajo de cualquier sección existente:
 
 ```html
 <section class="arrow-wrapper">
@@ -63,9 +66,15 @@ Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
 
 ---
 
-### 2. SCSS para animar la flecha en `about.scss`
+### 2. Agrega los estilos en `_about.scss`
+
+Pega lo siguiente en tu archivo `scss/_about.scss`:
 
 ```scss
+.arrow-wrapper {
+  margin-top: 60px;
+}
+
 .flecha {
   margin: 0 auto;
   height: 130px;
@@ -76,7 +85,7 @@ Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
     position: relative;
     height: 150px;
     width: 150px;
-    margin-bottom: 65px;
+    margin: 0 auto;
 
     .flecha-animada {
       position: absolute;
@@ -90,7 +99,7 @@ Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
 
       img {
         width: 100%;
-        transform: rotate(-90deg); // Apunta hacia abajo
+        transform: rotate(-90deg); // Flecha apunta hacia abajo
       }
     }
 
@@ -111,9 +120,9 @@ Guarda la imagen `green-arrow.png` dentro de la carpeta `/img/` de tu proyecto.
 
 ---
 
-### 💡 ¿Quieres más movimiento?
+### 💡 ¿Quieres más dinamismo?
 
-Agrega una segunda animación horizontal (`left → right`) al mismo elemento:
+Agrega una segunda animación lateral (`left ↔ right`) al mismo elemento:
 
 ```scss
 .flecha-animada {
@@ -134,14 +143,20 @@ Agrega una segunda animación horizontal (`left → right`) al mismo elemento:
 }
 ```
 
----
-
-## ✅ Consejos
-
-- Usa `position: absolute` para mover elementos respecto a su contenedor padre con `position: relative`.
-- Las propiedades `top`, `left`, `bottom`, `right` son útiles para animaciones simples.
-- Aplica animaciones con propósito: no sobrecargues visualmente tu sitio.
+> Así, tu flecha se moverá arriba/abajo y de lado a lado en bucle continuo.
 
 ---
 
-📎 [Ir al Postwork → Aplicar lo aprendido en una sección personalizada](../postwork/README.md)
+## 🧠 ¿Qué aprendiste aquí?
+
+- A usar `@keyframes` para definir estados de animación.
+- Cómo aplicar múltiples animaciones a un mismo elemento.
+- Cómo usar `position: relative` y `absolute` para tener control sobre los movimientos.
+
+---
+
+✅ ¡Listo! Ya tienes una animación atractiva y funcional que puedes reutilizar en cualquier sección del sitio.
+
+---
+
+📎 [Ir al Postwork → Aplica lo aprendido en una sección personalizada](../postwork/README.md)

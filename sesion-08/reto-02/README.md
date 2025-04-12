@@ -4,66 +4,93 @@
 
 ## 🎯 Objetivos
 
-1. Aplicar **más de una transición simultáneamente** sobre un mismo elemento.
-2. Controlar la duración y el ritmo (timing) de cada transición para mejorar la experiencia visual.
+1. Aplicar **más de una transición** sobre un mismo elemento usando CSS.
+2. Controlar la **duración y ritmo** de cada transición por separado.
+3. Reforzar el uso del pseudo-selector `:hover`.
 
 ---
 
 ## ✅ Requisitos
 
-- Tener instalado **Visual Studio Code**.
-- Haber creado y enlazado tu archivo `about.scss` al archivo `about.html`.
-- Tener configurado el compilador de Sass (con Live Sass Compiler o vía terminal).
+- Tener configurado **Visual Studio Code** y Sass.
+- Haber creado los archivos `about.html` y `about.scss` y tenerlos vinculados correctamente.
+- Haber completado el Ejemplo 02 con al menos una transición funcionando.
 
 ---
 
-## 🛠 Instrucciones
+## 🛠 Instrucciones paso a paso
 
-Ahora que ya tienes una transición aplicada al color del texto, vas a mejorar la interacción visual **agregando también un cambio de tamaño de fuente** cuando el usuario pase el mouse (`:hover`).
+### 1. Modifica el HTML si es necesario
 
-Ambas propiedades (color y tamaño) deben:
+Verifica que en `about.html` exista un título como el siguiente:
 
-- Cambiar suavemente usando `transition`.
-- Tener **duraciones diferentes** para observar el comportamiento combinado.
-
----
-
-## ✏️ ¿Dónde aplicarlo?
-
-Puedes hacerlo sobre el título principal (`h1` o `.section-title`) o sobre el título de cada tarjeta (`h3`, `.feature__title`), dentro de la nueva página `about.html`.
-
----
-
-## 💡 Tip
-
-Para aplicar varias transiciones, puedes separarlas por coma:
-
-```scss
-transition: color 0.3s ease-in-out, font-size 0.5s ease-out;
+```html
+<section class="about-content">
+  <h2 class="section-title">¿Por qué visitar México?</h2>
+</section>
 ```
 
-También puedes usar `transition: all 0.4s ease-in-out;` si todas las transiciones usarán el mismo tiempo y función, pero **es preferible ser explícito** con cada propiedad si necesitas control total.
+> Este será el elemento al que aplicaremos **más de una transición**.
+
+---
+
+### 2. Aplica múltiples transiciones en `_about.scss`
+
+Ahora edita los estilos de `.section-title` para que tenga dos transiciones:
+
+- Una al cambiar el **color** del texto.
+- Otra al modificar el **tamaño** (`font-size`).
+
+```scss
+.about-content {
+  .section-title {
+    font-size: 32px;
+    color: #333;
+    transition: color 0.3s ease-in-out, font-size 0.5s ease;
+
+    &:hover {
+      color: #c1272d;
+      font-size: 38px;
+    }
+  }
+}
+```
+
+---
+
+## ✅ Resultado esperado
+
+- El título se ve normal al cargar la página.
+- Al pasar el mouse sobre él (`:hover`), cambia:
+  - De color: de gris a rojo.
+  - De tamaño: de 32px a 38px.
+
+Todo esto ocurre de forma suave y fluida gracias a las **transiciones combinadas**.
+
+---
+
+## 📌 Tip profesional
+
+En lugar de usar `transition: all`, se recomienda declarar explícitamente las propiedades que deseas animar, así evitas efectos no deseados y tienes mayor control.
+
+```scss
+transition: color 0.3s ease-in-out, font-size 0.5s ease;
+```
 
 ---
 
 <details>
-  <summary>💡 Posible solución</summary>
+  <summary>💡 Posible variación</summary>
+
+También puedes aplicar el mismo efecto sobre los títulos de las tarjetas (`h3`) para dar más dinamismo visual a las secciones informativas:
 
 ```scss
-.feature__title {
-  margin-top: 50px;
-  font-weight: 500;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 35px;
-  text-decoration: none;
-  text-shadow: #025157 1px 1px 2px;
-
-  transition: color 0.3s ease-in-out, font-size 0.5s ease-out;
+.feature h3 {
+  transition: color 0.2s ease, transform 0.4s ease;
 
   &:hover {
-    color: #67b54b;
-    font-size: 28px;
+    color: #1d8b24;
+    transform: scale(1.1);
   }
 }
 ```
@@ -72,7 +99,7 @@ También puedes usar `transition: all 0.4s ease-in-out;` si todas las transicion
 
 ---
 
-✅ ¡Listo! Ahora tienes un título que cambia de color **y** de tamaño cuando el usuario pasa el cursor sobre él, creando un efecto más llamativo y profesional.
+📚 Con esto ya sabes cómo aplicar múltiples transiciones de forma profesional en tu sitio.
 
 ---
 

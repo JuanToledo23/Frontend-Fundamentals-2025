@@ -4,7 +4,7 @@
 
 ## 🎯 Introducción
 
-Nuestro sitio **"Descubre México"** ya está muy avanzado. Ahora vamos a prepararlo para aplicar **transiciones y animaciones** utilizando únicamente CSS.  
+Ahora vamos a aplicar **transiciones y animaciones** a nuestro sitio **"Descubre México"** utilizando únicamente CSS.  
 Estas técnicas permiten agregar movimiento y dinamismo sin necesidad de usar JavaScript, lo que mejora la experiencia del usuario y hace más atractivo el sitio.
 
 Bien implementadas, estas transiciones pueden guiar al usuario, llamar su atención de forma sutil y transmitir modernidad.
@@ -16,7 +16,7 @@ Bien implementadas, estas transiciones pueden guiar al usuario, llamar su atenci
 1. Crear una nueva página dentro del proyecto actual.
 2. Maquetar esta página reutilizando la estructura base de la landing principal.
 3. Preparar un archivo SCSS exclusivo para esta página.
-4. Comenzar a aplicar propiedades como `transition` y `animation`.
+4. Aplicar una primera transición visible en un botón con `:hover`.
 
 ---
 
@@ -32,20 +32,20 @@ Bien implementadas, estas transiciones pueden guiar al usuario, llamar su atenci
 
 ### 1. Crea una nueva página HTML
 
-Vamos a crear una nueva página llamada `about.html` para agregar y probar nuestras animaciones. En tu terminal, dentro del directorio raíz del proyecto, ejecuta:
+En tu terminal, dentro del directorio raíz del proyecto, ejecuta:
 
 ```bash
 touch about.html
 ```
 
-También crea un archivo SCSS dedicado para esta nueva página:
+También crea un archivo SCSS exclusivo para esta nueva página:
 
 ```bash
 cd scss
 touch _about.scss
 ```
 
-> Si tu archivo principal es `main.scss`, asegúrate de **importar** este nuevo archivo dentro de él:
+> Si tu archivo principal es `main.scss`, asegúrate de importar este nuevo archivo:
 
 ```scss
 @use 'about' as *;
@@ -55,7 +55,7 @@ touch _about.scss
 
 ### 2. Estructura del proyecto actualizada
 
-Tu estructura de carpetas debería quedar así:
+Tu estructura de carpetas debe verse así:
 
 ```
 descubre-mexico/
@@ -71,54 +71,107 @@ descubre-mexico/
 
 ---
 
-### 3. Nueva página base (about.html)
+### 3. Crea el contenido base de `about.html`
 
-Puedes copiar la estructura de `index.html` y renombrar la sección principal para trabajar sobre ella:
+Puedes reutilizar la estructura de `index.html` y modificar el contenido del `<main>` para trabajar con esta nueva sección:
 
 ```html
-<main>
-  <section class="about-hero">
-    <h1>Sobre México</h1>
-    <p>Explora la riqueza cultural y natural del país desde una nueva perspectiva.</p>
-  </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Sobre México</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="#lugares">Lugares Icónicos</a></li>
+        <li><a href="#cultura">Cultura y Tradiciones</a></li>
+        <li><a href="./about.html">Sobre México</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a>Sign In</a>
+    </div>
+  </header>
 
-  <section class="about-content">
-    <!-- Aquí irán las tarjetas, imágenes o textos animados -->
-  </section>
-</main>
+  <main class="about-page">
+    <section class="about-hero">
+      <h1>Sobre México</h1>
+      <p>Explora la riqueza cultural y natural del país desde una nueva perspectiva.</p>
+      <button class="btn-explorar">Explorar ahora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Descubre México</p>
+  </footer>
+</body>
+</html>
 ```
 
 ---
 
-## ✨ Propiedades que usarás en esta sesión
+### 4. Estilos en `_about.scss`
 
-Estas son las propiedades CSS que introduciremos:
-
-- `transition`: para suavizar los cambios entre estados.
-- `animation`: para definir animaciones complejas en CSS.
-- `@keyframes`: para declarar cómo se comporta una animación en el tiempo.
-- Pseudo-elementos y pseudo-clases como `:hover`, `:focus`, `::before`, `::after`.
-
----
-
-## 💡 Ejemplo básico
+Ahora vamos a aplicar una transición suave en el botón `.btn-explorar`:
 
 ```scss
-.button {
-  background-color: #c1272d;
-  color: white;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
+.about-page {
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
 
-  &:hover {
-    background-color: #8b1d24;
+  .about-hero {
+    h1 {
+      font-size: 36px;
+      color: #c1272d;
+      font-family: 'Alegreya', serif;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .btn-explorar {
+      padding: 12px 24px;
+      background-color: #1d8b24;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #145c1a;
+      }
+    }
   }
 }
 ```
 
 ---
 
-✅ Este es el inicio de la interactividad. En los siguientes retos y ejemplos iremos agregando transiciones, animaciones y efectos visuales enriquecedores dentro de esta nueva página.
+## ✨ ¿Qué hicimos?
+
+- Creamos una nueva página HTML (`about.html`) con una sección sencilla.
+- Insertamos un **botón interactivo** con una transición en el color de fondo cuando el cursor pasa sobre él.
+- Configuramos un archivo SCSS modular para mantener una buena organización del código.
+
+---
+
+## 📌 Resultado esperado
+
+Cuando el usuario pasa el cursor sobre el botón **"Explorar ahora"**, este cambia suavemente de un verde claro a uno más oscuro, sin cortes bruscos.
+
+Este es un primer paso para comenzar a añadir interactividad visual a la nueva sección de nuestro sitio.
 
 ---
 

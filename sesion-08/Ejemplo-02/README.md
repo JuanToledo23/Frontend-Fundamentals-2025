@@ -5,63 +5,80 @@
 ## 🎯 Introducción
 
 Las **transiciones** permiten suavizar los cambios visuales que ocurren cuando un elemento cambia de estado, como al pasar el mouse por encima (`:hover`).  
-Esto es útil para crear una experiencia más fluida y atractiva, en lugar de aplicar cambios bruscos.
+Esto mejora la experiencia del usuario al hacer que los cambios visuales no sean bruscos, sino progresivos.
 
-En este ejemplo vamos a aplicar nuestra **primera transición en CSS**, utilizando texto y botones dentro de la nueva página `about.html` del proyecto **"Descubre México"**.
+En este ejemplo vamos a aplicar una transición en **texto** y en un **botón**, directamente en la nueva página `about.html` del proyecto **"Descubre México"**.
 
 ---
 
 ## ✅ Objetivos
 
-1. Utilizar la propiedad `transition` en elementos `<button>` y `<h2>`.
-2. Aplicar el pseudo-selector `:hover` para activar una transición visual.
-3. Entender el uso de `transition` como propiedad abreviada.
+1. Usar `transition` para aplicar efectos suaves sobre texto y botones.
+2. Detectar estados de interacción con `:hover`.
+3. Entender cómo combinar múltiples transiciones en un mismo elemento.
 
 ---
 
 ## 🛠 Desarrollo paso a paso
 
-### 1. Selecciona un elemento para animar
+### 1. Agrega contenido en `about.html`
 
-Vamos a aplicar una transición a los títulos de las tarjetas o a un botón dentro de la nueva sección `about.html`. Puedes usar el siguiente bloque de HTML como base:
+Abre tu archivo `about.html` y agrega la siguiente sección debajo de `.about-hero`:
 
 ```html
 <section class="about-content">
   <h2 class="section-title">¿Por qué visitar México?</h2>
-  <button class="cta-button">Explora Lugares</button>
+  <p class="section-description">
+    México es un país vibrante, lleno de cultura, gastronomía y paisajes que enamoran.
+  </p>
+  <button class="cta-button">Explorar Lugares</button>
 </section>
 ```
 
 ---
 
-### 2. Estilos SCSS con transición
+### 2. Estilos en `_about.scss`
 
-En tu archivo `_about.scss`, agrega lo siguiente:
+Ahora agrega los siguientes estilos a tu archivo `scss/_about.scss`:
 
 ```scss
-.section-title {
-  font-size: 32px;
-  color: #333;
+.about-content {
   text-align: center;
-  transition: color 0.3s ease-in-out;
+  padding: 60px 20px;
 
-  &:hover {
-    color: #c1272d; // Cambia a un rojo mexicano al pasar el mouse
+  .section-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 16px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #c1272d; // Rojo tradicional mexicano
+    }
   }
-}
 
-.cta-button {
-  background-color: #1d8b24;
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  .section-description {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-  &:hover {
-    background-color: #145c1a; // Verde más oscuro al hacer hover
+  .cta-button {
+    background-color: #1d8b24;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #145c1a; // Verde más oscuro al hacer hover
+    }
   }
 }
 ```
@@ -70,37 +87,48 @@ En tu archivo `_about.scss`, agrega lo siguiente:
 
 ### 3. ¿Qué hace exactamente `transition`?
 
-La propiedad `transition` permite definir, en una sola línea, cómo se va a ejecutar un cambio visual en el elemento. Es una forma abreviada de:
+La propiedad `transition` permite que un cambio de propiedad CSS ocurra de forma **gradual**.
 
-- `transition-property`: Qué propiedad cambiará (por ejemplo, `color` o `background-color`)
-- `transition-duration`: Cuánto tiempo durará la transición (por ejemplo, `0.3s`)
-- `transition-timing-function`: Cómo será el ritmo del cambio (`ease-in`, `ease-out`, `linear`, etc.)
-- `transition-delay` *(opcional)*: Cuánto tiempo esperar antes de iniciar la transición
+```scss
+transition: color 0.3s ease-in-out;
+```
+
+Esto significa:
+
+- `color`: es la propiedad que va a cambiar.
+- `0.3s`: el cambio durará 0.3 segundos.
+- `ease-in-out`: comienza y termina lento, pero es más rápido en medio.
+
+Puedes aplicar transiciones a muchas propiedades: `color`, `background-color`, `font-size`, `transform`, etc.
 
 ---
 
 ### 4. Resultado visual
 
-Cuando se carga la página, el botón y el título tienen su **estado base**.  
-Al pasar el cursor sobre ellos, la transición se activa suavemente.
+📌 Estado inicial (sin interacción):  
+- El título es gris oscuro.
+- El botón es verde.
 
-📸 Estado inicial:
-![Elemento base](../assets/elementoBase.png)
+🖱️ Al pasar el cursor sobre el título o el botón:
+- El título cambia a rojo.
+- El botón cambia a un verde más intenso.
 
-📸 Estado con `:hover` activado:
-![Elemento con hover](../assets/elementoHover.png)
+📸 Referencias visuales:
+- ![Elemento base](../assets/elementoBase.png)
+- ![Elemento con hover](../assets/elementoHover.png)
 
 ---
 
 ## 💡 Buenas prácticas: DRY (Don't Repeat Yourself)
 
-Reutiliza clases siempre que los elementos compartan los mismos estilos.  
-Por ejemplo, si varios botones tienen la misma estructura visual, define una sola clase `.cta-button` y aplícala a todos. Así, un solo cambio en SCSS actualizará todos los botones del proyecto.
+Evita duplicar estilos. Si tienes varios botones que usan el mismo diseño, define una clase general (`.cta-button`) y reutilízala.
+
+Así, cualquier ajuste en un solo lugar se reflejará en todos los botones del mismo tipo.
 
 ---
 
-✅ Con esto ya estás aplicando interactividad básica a tu proyecto usando solo CSS, ¡sin una sola línea de JavaScript!
+✅ Con este ejercicio ya estás aplicando interactividad real en tu sitio con **CSS puro**, sin necesidad de JavaScript.
 
 ---
 
-📎 [Ir al Reto 02 → Agrega una nueva transición](../reto-02/README.md)
+📎 [Ir al Reto 02 → Agrega una nueva transición combinada](../reto-02/README.md)
