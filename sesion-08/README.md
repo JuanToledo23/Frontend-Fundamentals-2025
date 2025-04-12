@@ -1,29 +1,54 @@
-# Sesión 08: Interactividad básica (transiciones y animaciones)
+# ✨ Sesión 08: Interactividad básica (transiciones y animaciones)
 
-## Introducción
+---
 
-Las páginas web modernas hacen uso de varias técnicas para llamar la atención de sus usuarios y llevarlos a tomar las acciones por las que se desarrollo el sitio: recibir información, tomar una decisión, comprar un producto, compartir información. Esto es debido a que un sitio web debe ser atractivo visualmente, pero sin utilizar en sobremanera efectos o imágenes. Por ello, como desarrollador debes saber cómo agregar estos elementos a tu sitio y capturar la atención de tu usuario desde el primer momento. Efectos sutiles y animaciones adecuadas enriquecerán tus proyectos y los harán sobresalir de los demás.
+## 🎯 Introducción
 
-## Objetivos
+Las páginas web modernas no solo deben verse bien, también deben sentirse bien al interactuar con ellas.  
+**Animaciones, transiciones y efectos visuales sutiles** son clave para mejorar la experiencia del usuario sin saturar la interfaz.
 
-En esta sesión aprenderás:
+En esta sesión aprenderás a darle vida a tu sitio **"Descubre México"** usando **CSS puro**, manteniendo la estética visual y la claridad del contenido.
 
-- Usar propiedades de CSS para dar interactividad básica a tus proyectos.
-- Definir animaciones dentro de tu página.
-- Analizar cómo insertar más de una animación en tu página.
+---
 
-## Organización de la clase
+## 🧠 Objetivos
 
-- [Ejemplo 01: Agregar una nueva página en nuestro proyecto ( 15 minutos ) ](./Ejemplo-01/README.md)
+Al finalizar esta sesión podrás:
 
-- [Reto 01: Agrega elementos a la nueva página ( 35 minutos ) ](./reto-01/README.md)
+- Aplicar **transiciones** para mejorar la interacción con elementos de la interfaz.
+- Definir y reutilizar **animaciones en CSS**.
+- Usar pseudo-elementos y estados (`:hover`, `:focus`, etc.) para enriquecer tu página.
+- Coordinar múltiples animaciones de forma controlada.
 
-- [Ejemplo 02: Transiciones y pseudo-elementos ( 20 minutos ) ](./reto-02/README.md)
+---
 
-- [Reto 02: Agregando otra transición ( 15 minutos ) ](./reto-02/README.md)
+## 🗂️ Organización de la clase
 
-- [Reto 03: Agregando una animación ( 35 minutos ) ](./reto-03/README.md)
+| Tipo     | Actividad                                                                 | Duración estimada |
+|----------|---------------------------------------------------------------------------|-------------------|
+| 🧪 Ejemplo | [Ejemplo 01: Agregar una nueva página al proyecto](./Ejemplo-01/README.md) | 15 minutos        |
+| 🧠 Reto    | [Reto 01: Agrega elementos y estructura a la nueva página](./reto-01/README.md) | 35 minutos        |
+| 🧪 Ejemplo | [Ejemplo 02: Transiciones y pseudo-elementos](./Ejemplo-02/README.md)     | 20 minutos        |
+| 🧠 Reto    | [Reto 02: Agrega una nueva transición](./reto-02/README.md)               | 15 minutos        |
+| 🧠 Reto    | [Reto 03: Agrega una animación](./reto-03/README.md)                      | 35 minutos        |
+| 🧩 Postwork| [Postwork – Práctica con transiciones y animaciones](./postwork/README.md) | 20 minutos        |
 
-- [Postwork ( 20 minutos ) ](./postwork/README.md)
+---
 
-[Regresar](../README.md)
+## 🔧 Recomendaciones
+
+- Prioriza la **coherencia visual**: mantén los efectos consistentes con los estilos de "Descubre México".
+- Usa DevTools para **previsualizar animaciones y ajustar tiempos/delays**.
+- Mantén un enfoque sutil. La interactividad debe **enriquecer** la experiencia, no distraerla.
+
+---
+
+## 📝 Tips para esta sesión
+
+- Apóyate en herramientas como [Animista](https://animista.net/) para generar animaciones en CSS.
+- Practica con las secciones ya existentes de la landing (por ejemplo: tarjetas de lugares o elementos culturales).
+- Observa cómo reaccionan los elementos al hacer `hover`, al enfocarse, o al hacer scroll.
+
+---
+
+📎 [Regresar al índice general del curso](../README.md)

@@ -1,75 +1,125 @@
-# Ej. 01 - Crear la estructura final del proyecto
-## Introducción
-Nuestro proyecto ya casi está concluido. Ahora es momento de agregarle algunos elementos qué permitirán hacer de este un sitio atractivo y con cierta interactividad.
+# 🧪 Ejemplo 01: Crear la estructura final del proyecto
 
-Como lo viste durante el prework, las transiciones y animaciones dan "vida" a nuestra página, sin necesidad todavía de usar Javascript. CSS tiene algunos trucos bajo la manga que hacen más interesante la presentación de tu página. Si bien deben usarse con cuidado, las transiciones y aniumaciones son casi obligadas en todos los desarrollos web modernos.
+---
 
-## Objetivo
-1. Crear una nueva página de nuestro proyecto.
-2. Maquetar la nueva página usando un diseño establecido.
+## 🎯 Introducción
 
-## Requisitos
-- Tener instalado Visual Studio Code.
+Nuestro sitio **"Descubre México"** ya está muy avanzado. Ahora vamos a prepararlo para aplicar **transiciones y animaciones** utilizando únicamente CSS.  
+Estas técnicas permiten agregar movimiento y dinamismo sin necesidad de usar JavaScript, lo que mejora la experiencia del usuario y hace más atractivo el sitio.
 
-## Desarrollo
+Bien implementadas, estas transiciones pueden guiar al usuario, llamar su atención de forma sutil y transmitir modernidad.
 
-¡Manos a la obra, entonces! Vamos a crear una nueva página en nuestro proyecto donde podamos agregar nuestras animaciones y transiciones de manera clara, para así poder ejercitarnos en CSS y comprender el proceso para crear estos efectos especiales, como les hemos llamado en esta sección.
+---
 
-Vamos a crear una nueva página, "About us", partiendo del diseño de la página Matcha al momento de crear esta documentación.
+## ✅ Objetivos
 
-## Nuevas propiedades que utilizaremos en esta sesión
+1. Crear una nueva página dentro del proyecto actual.
+2. Maquetar esta página reutilizando la estructura base de la landing principal.
+3. Preparar un archivo SCSS exclusivo para esta página.
+4. Comenzar a aplicar propiedades como `transition` y `animation`.
 
-Las nuevas propiedades que utilizaremos hoy son `transition` y `animation`. Usaremos también la regla `@keyframes`, que define cómo se desarrollará una animación en nuestra página.
+---
 
-Como vimos en el pre-work, `transition` normalmente viene asociado con **pseudo-elementos** de CSS, como son `:hover` o `:focus`, para que se detecte el estado desde donde arranca la transición.
+## 🧰 Requisitos
 
-Las animaciones usan la propiedad `animation`, en conjunto con la regla `@keyframes`, donde podemos definir todos los estados que necesitemos durante una animación para que se desarrolle como lo deseamos. En particular, `animation` es una versión abreviada de varias propiedades de CSS relacionadas, como son `animation-duration` o `animation-name`. Esas diferentes propiedades nos permiten mantener el control entre todos los estados que necesitemos y definir exactamente cómo queremos que la animación se desarrolle.
+- Tener instalado **Visual Studio Code**.
+- Tener configurado **Sass (Dart Sass)** o utilizar la extensión Live Sass Compiler.
+- Contar con la estructura base del proyecto *Descubre México*.
 
-## Elementos de Matcha a copiar en nuestro proyecto
+---
 
-[Ejemplo de elemento en la página de Matcha](../assets/topFeaturesMatcha.png)
+## 🛠 Desarrollo paso a paso
 
-Estos elementos hay que insertarlos en una nueva página. Para ello, recordemos nuestra estructura:
+### 1. Crea una nueva página HTML
 
+Vamos a crear una nueva página llamada `about.html` para agregar y probar nuestras animaciones. En tu terminal, dentro del directorio raíz del proyecto, ejecuta:
 
-```text
-matcha/
-    └── scss/main.scss
-    └── index.html
-    └── pricing.html
+```bash
+touch about.html
 ```
 
-Vamos a agregar nuestros archivos. Aprovecharemos que ya hemos trabajado con SASS en la sesión anterior, y utilizaremos sus bondades.
+También crea un archivo SCSS dedicado para esta nueva página:
 
-Debemos crear nuestros archivos. Simplemente abrimos una terminal y nos ubicamos en nuestro directorio de trabajo (/matcha).
-
-
-```text
-> pwd
-/Users/bedu/matcha
-
-> touch aboutUs.html
-> ls
-index.html pricing.html style.css output.css aboutUs.html
-
-> cd scss
-> touch aboutUs.scss
-> ls
-main.scss _global.scss _aboutUs.scss #puedes tener más archivos, según hayas decidido hacer más partials.
+```bash
+cd scss
+touch _about.scss
 ```
 
-Ahora, nuestra estructura debe ser la siguiente:
+> Si tu archivo principal es `main.scss`, asegúrate de **importar** este nuevo archivo dentro de él:
 
-```text
-matcha/
-    └── scss/
-          └── main.scss
-          └── aboutUs.scss
-    └── index.html
-    └── pricing.html
-    └── aboutUs.html
-    └── style.css
-    └── output.css
+```scss
+@use 'about' as *;
 ```
 
-[Siguiente](../reto-01/README.md)
+---
+
+### 2. Estructura del proyecto actualizada
+
+Tu estructura de carpetas debería quedar así:
+
+```
+descubre-mexico/
+├── index.html
+├── about.html
+├── style.css
+├── output.css
+├── scss/
+│   ├── main.scss
+│   ├── _global.scss
+│   └── _about.scss
+```
+
+---
+
+### 3. Nueva página base (about.html)
+
+Puedes copiar la estructura de `index.html` y renombrar la sección principal para trabajar sobre ella:
+
+```html
+<main>
+  <section class="about-hero">
+    <h1>Sobre México</h1>
+    <p>Explora la riqueza cultural y natural del país desde una nueva perspectiva.</p>
+  </section>
+
+  <section class="about-content">
+    <!-- Aquí irán las tarjetas, imágenes o textos animados -->
+  </section>
+</main>
+```
+
+---
+
+## ✨ Propiedades que usarás en esta sesión
+
+Estas son las propiedades CSS que introduciremos:
+
+- `transition`: para suavizar los cambios entre estados.
+- `animation`: para definir animaciones complejas en CSS.
+- `@keyframes`: para declarar cómo se comporta una animación en el tiempo.
+- Pseudo-elementos y pseudo-clases como `:hover`, `:focus`, `::before`, `::after`.
+
+---
+
+## 💡 Ejemplo básico
+
+```scss
+.button {
+  background-color: #c1272d;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #8b1d24;
+  }
+}
+```
+
+---
+
+✅ Este es el inicio de la interactividad. En los siguientes retos y ejemplos iremos agregando transiciones, animaciones y efectos visuales enriquecedores dentro de esta nueva página.
+
+---
+
+📎 [Ir al Reto 01 → Agrega elementos a la nueva página](../reto-01/README.md)
