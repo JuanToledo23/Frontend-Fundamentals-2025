@@ -58,17 +58,17 @@ Abre tu archivo `about.html` y pega el siguiente contenido:
 
     <section class="features">
       <div class="feature">
-        <img src="./img/food.svg" alt="Gastronomía">
+        <img src="https://assets.elgourmet.com/wp-content/uploads/2023/03/mole-_9IMJjkql3RCWT1eg6AHUD8PKyZLh7o-1024x683.png.webp" alt="Gastronomía">
         <h3>Gastronomía</h3>
         <p>Una de las más reconocidas del mundo por su diversidad de ingredientes, colores y sabores.</p>
       </div>
       <div class="feature">
-        <img src="./img/see.png" alt="Naturaleza">
+        <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/331000/331437-Quintana-Roo.jpg" alt="Naturaleza">
         <h3>Naturaleza</h3>
         <p>Desde playas paradisíacas hasta selvas y montañas, México lo tiene todo.</p>
       </div>
       <div class="feature">
-        <img src="./img/chichenitza.jpeg" alt="Historia">
+        <img src="https://lahistoriamexicana.mx/wp-content/uploads/independancia-de-mexico.jpg" alt="Historia">
         <h3>Historia</h3>
         <p>Hogar de civilizaciones como los mayas y aztecas, con sitios arqueológicos impresionantes.</p>
       </div>
@@ -92,7 +92,6 @@ Agrega lo siguiente en el archivo `scss/_about.scss`:
 
 ```scss
 .about-page {
-  margin-top: 100px;
   padding: 40px 20px;
   text-align: center;
 
